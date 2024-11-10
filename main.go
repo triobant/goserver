@@ -8,10 +8,12 @@ import (
 )
 
 func main() {
+    // route incoming http requests to our handlers in code
 	m := http.NewServeMux()
 
 	m.HandleFunc("/", handlePage)
 
+    // server
 	const addr = ":8080"
 	srv := http.Server{
 		Handler:      m,
